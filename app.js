@@ -13,10 +13,9 @@ const app = express();
 const corsOptions = require("./config/corsOptions");
 const PORT = process.env.PORT || 3000;
 mongoose.set("strictQuery", false);
+app.use(cors());
 
 connectDB();
-
-app.use(cors(corsOptions));
 
 app.use(express.json());
 
