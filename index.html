@@ -86,7 +86,9 @@
       });
 
       const recibirArchivos = async () => {
-        const archivos = await fetch("http://localhost:3000/archivos");
+        const archivos = await fetch(
+          "https://arcoiris-api.vercel.app/archivos"
+        );
 
         const json = await archivos.json();
 
