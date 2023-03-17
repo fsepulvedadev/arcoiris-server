@@ -19,6 +19,10 @@ connectDB();
 
 app.use(express.json());
 
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 // rutas
 
 app.use("/agregar", require("./routes/agregar"));
@@ -27,10 +31,10 @@ app.use("/archivos", require("./routes/mostrarTodos"));
 app.use("/borrar", require("./routes/borrarArchivo.js"));
 app.use("/descargar", require("./routes/descargarArchivos.js"));
 
-mongoose.connection.once("open", () => {
+/* mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-});
+}); */
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
