@@ -52,7 +52,7 @@ const handleNewArchivo = async (req, res) => {
       localizacionAccesoControl,
     });
 
-    console.log(result);
+    console.log("este es el resultado", result);
     res.send(result);
   } catch (err) {
     res.status(500).json({ message: err.message });
